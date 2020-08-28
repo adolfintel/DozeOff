@@ -1,0 +1,20 @@
+<resources
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:autoLink="web">
+    <string name="app_name">DozeOff</string>
+    <string name="error">Doze not disabled: </string>
+    <string name="success">Doze disabled</string>
+    <string name="notRooted">Not rooted</string>
+
+    <string name="main_description">This app will keep Doze disabled on your device</string>
+    <string name="main_notRooted">This app requires a rooted device</string>
+    <string name="main_hide">Hide app</string>
+    <string name="main_dev">Made with 😠 by <a href="">Federico Dossena</a></string>
+    <string name="website">https://fdossena.com/?p=dozeoff/i.frag</string>
+    <string name="main_license">Distributed under the GNU GPLv3 license</string>
+    <string name="hide_dialog">Hide app?</string>
+    <string name="hide_dialog_desc">The app will be hidden from the app drawer</string>
+    <string name="hide_clicked">The icon will disappear soon</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+</resources>
