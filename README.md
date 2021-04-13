@@ -8,9 +8,12 @@ Since Doze was introduced in Android 6.0, it's been a constant source of pain fo
 DozeOff automatically disables Doze when the system is booted on your rooted device, simple as that. There are no settings to tweak, you just install it and forget about it.
 
 ## Download
-[Download APK](https://downloads.fdossena.com/geth.php?r=dozeoff-apk)
 
-Coming at some point to F-Droid.
+[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
+     alt="Get it on F-Droid"
+     height="80">](https://f-droid.org/packages/com.dosse.dozeoff/)
+
+[Download APK](https://downloads.fdossena.com/geth.php?r=dozeoff-apk)
 
 ## Supported devices
 Any **rooted** device running Android 6.0 and newer.  
