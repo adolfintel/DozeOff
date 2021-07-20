@@ -1,5 +1,8 @@
 package com.dosse.dozeoff;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+
 import java.io.File;
 
 public class Utils {
@@ -28,4 +31,9 @@ public class Utils {
         }
         return false;
     }
+
+    public static SharedPreferences getPreferences(Context context){
+        return context.getSharedPreferences("DozeOff",Context.MODE_PRIVATE);
+    }
+
 }

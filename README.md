@@ -5,7 +5,9 @@
 
 Since Doze was introduced in Android 6.0, it's been a constant source of pain for developers who can't keep background processes running reliably, and users who are constantly missing important notifications because the system automatically decides to kill background services. Some ROMs are worse than others, with MIUI being the worst offender and AOSP being somewhat tolerable.
 
-DozeOff automatically disables Doze when the system is booted on your rooted device, simple as that. There are no settings to tweak, you just install it and forget about it.
+DozeOff automatically disables Doze when the system is booted on your rooted device, simple as that.
+
+In addition to disabling Doze, you can also optionally keep the CPU and WiFi awake at all times, but this will drain the battery very quickly.
 
 ## Download
 
@@ -17,7 +19,7 @@ DozeOff automatically disables Doze when the system is booted on your rooted dev
 
 ## Supported devices
 Any **rooted** device running Android 6.0 and newer.  
-Tested on LineageOS 17.1
+Tested on LineageOS 17.1 and 18.1
 
 ## Donate
 [Donate with PayPal](https://www.paypal.me/sineisochronic)
@@ -26,7 +28,7 @@ Tested on LineageOS 17.1
 <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/screen1.png" width="400" />
 
 ## License
-Copyright (C) 2020 Federico Dossena
+Copyright (C) 2020-2021 Federico Dossena
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
