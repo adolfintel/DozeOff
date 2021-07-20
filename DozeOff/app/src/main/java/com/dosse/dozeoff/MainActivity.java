@@ -29,21 +29,27 @@ public class MainActivity extends Activity {
             findViewById(R.id.doze_off).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    prefs.edit().putBoolean("doze_off",((CheckBox)findViewById(R.id.doze_off)).isChecked());
+                    SharedPreferences.Editor e=prefs.edit();
+                    e.putBoolean("doze_off",((CheckBox)findViewById(R.id.doze_off)).isChecked());
+                    e.commit();
                     applySettings();
                 }
             });
             findViewById(R.id.wakelock_cpu).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    prefs.edit().putBoolean("wakelock_cpu",((CheckBox)findViewById(R.id.wakelock_cpu)).isChecked());
+                    SharedPreferences.Editor e=prefs.edit();
+                    e.putBoolean("wakelock_cpu",((CheckBox)findViewById(R.id.wakelock_cpu)).isChecked());
+                    e.commit();
                     applySettings();
                 }
             });
             findViewById(R.id.wakelock_wifi).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    prefs.edit().putBoolean("wakelock_wifi",((CheckBox)findViewById(R.id.wakelock_wifi)).isChecked());
+                    SharedPreferences.Editor e=prefs.edit();
+                    e.putBoolean("wakelock_wifi",((CheckBox)findViewById(R.id.wakelock_wifi)).isChecked());
+                    e.commit();
                     applySettings();
                 }
             });
