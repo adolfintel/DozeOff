@@ -7,7 +7,9 @@ Since Doze was introduced in Android 6.0, it's been a constant source of pain fo
 
 DozeOff automatically disables Doze when the system is booted on your rooted device, simple as that.
 
-In addition to disabling Doze, you can also optionally keep the CPU and WiFi awake at all times, but this will drain the battery very quickly.
+On Android 12L and newer, DozeOff will also disable Phantom Process Killing.
+
+You can also choose keep the CPU and WiFi awake at all times, but this will drain the battery very quickly.
 
 ## Download
 
@@ -28,7 +30,7 @@ Tested on LineageOS 17.1 and 18.1
 <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/screen1.png" width="400" />
 
 ## License
-Copyright (C) 2020-2021 Federico Dossena
+Copyright (C) 2020-2022 Federico Dossena
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

@@ -41,9 +41,16 @@
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@string/phantom_off"
+                android:id="@+id/phantom_off"
+                android:layout_below="@id/doze_off"
+                />
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/wakelock_cpu"
                 android:id="@+id/wakelock_cpu"
-                android:layout_below="@id/doze_off"
+                android:layout_below="@id/phantom_off"
                 />
             <CheckBox
                 android:layout_width="wrap_content"

@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
@@ -24,13 +25,26 @@ public class MainActivity extends Activity {
             findViewById(R.id.settingsArea).setVisibility(View.VISIBLE);
             SharedPreferences prefs=Utils.getPreferences(getApplicationContext());
             ((CheckBox)findViewById(R.id.doze_off)).setChecked(prefs.getBoolean("doze_off",true));
+            ((CheckBox)findViewById(R.id.phantom_off)).setChecked(prefs.getBoolean("phantom_off",true));
             ((CheckBox)findViewById(R.id.wakelock_cpu)).setChecked(prefs.getBoolean("wakelock_cpu",false));
             ((CheckBox)findViewById(R.id.wakelock_wifi)).setChecked(prefs.getBoolean("wakelock_wifi",false));
+            if(Build.VERSION.SDK_INT<32){ //phantom process killing was introduced with android 12L
+                ((CheckBox)findViewById(R.id.phantom_off)).setEnabled(false);
+            }
             findViewById(R.id.doze_off).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     SharedPreferences.Editor e=prefs.edit();
                     e.putBoolean("doze_off",((CheckBox)findViewById(R.id.doze_off)).isChecked());
+                    e.commit();
+                    applySettings();
+                }
+            });
+            findViewById(R.id.phantom_off).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    SharedPreferences.Editor e=prefs.edit();
+                    e.putBoolean("phantom_off",((CheckBox)findViewById(R.id.phantom_off)).isChecked());
                     e.commit();
                     applySettings();
                 }

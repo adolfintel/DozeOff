@@ -5,8 +5,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.wifi.WifiManager;
+import android.os.Build;
 import android.os.PowerManager;
 import android.util.Log;
+import android.view.View;
+import android.widget.CheckBox;
 import android.widget.Toast;
 
 import java.io.OutputStream;
@@ -25,9 +28,20 @@ public class DozeKiller extends BroadcastReceiver {
             if(prefs.getBoolean("doze_off",true)){
                 os.write(("dumpsys deviceidle disable\n").getBytes("ASCII")); //disable doze
                 Log.d("DozeOff","Doze disabled");
-            }else{
+            }else {
                 os.write(("dumpsys deviceidle enable\n").getBytes("ASCII")); //enable doze
-                Log.d("DozeOff","Doze enabled");
+                Log.d("DozeOff", "Doze enabled");
+            }
+            if(Build.VERSION.SDK_INT>=32){ //phantom process killing was introduced with android 12L
+                if(prefs.getBoolean("phantom_off",true)){ //disable phantom process killing
+                    os.write(("settings put global settings_enable_monitor_phantom_procs false\n").getBytes("ASCII"));
+                    os.write(("setprop persist.sys.fflag.override.settings_enable_monitor_phantom_procs false\n").getBytes("ASCII"));
+                    Log.d("DozeOff","Phantom Process Killing disabled");
+                }else{ //enable phantom process killing
+                    os.write(("settings put global settings_enable_monitor_phantom_procs true\n").getBytes("ASCII"));
+                    os.write(("setprop persist.sys.fflag.override.settings_enable_monitor_phantom_procs true\n").getBytes("ASCII"));
+                    Log.d("DozeOff","Phantom Process Killing enabled");
+                }
             }
             os.flush();
             os.write("exit\n".getBytes("ASCII"));

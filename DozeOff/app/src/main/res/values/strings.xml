@@ -11,6 +11,7 @@
     <string name="main_license">Distributed under the GNU GPLv3 license</string>
 
     <string name="doze_off">Disable Doze</string>
+    <string name="phantom_off">Disable Phantom Process Killing</string>
     <string name="wakelock_cpu">Keep CPU awake</string>
     <string name="wakelock_wifi">Keep WiFi awake</string>
     <string name="hide">Hide app</string>
